@@ -1,4 +1,12 @@
-import { Box, FormControl, InputLabel, Select, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 import { useState } from "react";
 
 const AddHabitForm: React.FC = () => {
@@ -21,8 +29,15 @@ const AddHabitForm: React.FC = () => {
             onChange={(event) =>
               setFrequency(event.target.value as "daily" | "weekly")
             }
-          ></Select>
+          >
+            <MenuItem value="daily">Daily</MenuItem>
+            <MenuItem value="monthly">Monthly</MenuItem>
+          </Select>
         </FormControl>
+
+        <Button type="submit" variant="contained" color="primary">
+          Add Habit
+        </Button>
       </Box>
     </form>
   );
